@@ -26,5 +26,6 @@ The two decomposition functions yielded similar results. We decided to continue 
 We generated six sets of prediction data to begin the “rolling horizon approach” (Suvrajeet). This requires generating a 3 months of demand predictions in the future with each additional month of data. Since we want to predict 6 months into the future beginning in January 2001 and ending in June 2001, we first predicted using the training data set, then we predicted with the training data set plus one additional month of data, and so on and so forth until we get to the sixth month. This gives us 6 sets of data that includes 3 months of predicted demand and forecast errors
 
 ## Optimization Model
-![Image of Yaktocat](Inventory-Control-and-Demand-Forecasting1.png)
-
+![Image of Formula](Inventory-Control-and-Demand-Forecasting1.png)
+![Image of chart](Inventory-Control-and-Demand-Forecasting2.png)
+For our problem, the holding cost ht per quantity of inventory is $1, while the cost of lost sales bt per quantity is $3. We order at the end of each month by adding Δt , the order quantity, to the inventory at the end of the month xt to get the new inventory yt+1 at the beginning of the next month. After customers purchase the items, the beginning inventory decreases by the amount purchased Dt, which is demand, to find the new ending inventory xt+1. There are also constraints on storage capacity Rt as well as delivery capacity Ut. 
