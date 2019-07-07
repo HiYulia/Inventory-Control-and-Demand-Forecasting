@@ -19,4 +19,12 @@ For the Augmented Dickey-Fuller Test, the lack of stationarity is the null hypot
 Since we passed both tests, the data is stationary and an ARIMA model can be used for predictions.
 
 ## Decomposition & Forecasting
+We used two different functions to decompose the training set. First, we used Classical Seasonal Decomposition by Moving Averages (decompose) from the states package in R. Then we used Seasonal Decomposition of Time Series by Loess (stl) also from the stats package in R
+
+The two decomposition functions yielded similar results. We decided to continue with Loess for predictions because it is a more advanced technique. We used ARIMA (auto.arima function from the forecast package) to model the data and create predictions for future demand.
+
+We generated six sets of prediction data to begin the “rolling horizon approach” (Suvrajeet). This requires generating a 3 months of demand predictions in the future with each additional month of data. Since we want to predict 6 months into the future beginning in January 2001 and ending in June 2001, we first predicted using the training data set, then we predicted with the training data set plus one additional month of data, and so on and so forth until we get to the sixth month. This gives us 6 sets of data that includes 3 months of predicted demand and forecast errors
+
+## Optimization Model
+
 
