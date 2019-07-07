@@ -32,6 +32,14 @@ For our problem, the holding cost ht per quantity of inventory is $1, while the 
 
 ## Results and Evaluation
 We enter the model into AMPL (Deterministic without errors) and Pyomo (Stochastic with errors). See Appendix for the code used to perform the optimization. Our results from the solvers can be seen below:
+![Image of Deterministic LP](Inventory-Control-and-Demand-Forecasting3.png)
+![Image of Stochastic LP](Inventory-Control-and-Demand-Forecasting4.png)
+The stochastic model has a higher cost at the end than the deterministic model, which is unexpected as the stochastic model is expected to provide more accurate predictions due to the incorporation of randomness into its calculations. In order to check why the results seemed to veer from expectations, we plotted the cost for each month and compared the two models.
+
+To validate our results, we used the Back-Testing approach. We first performed a two sample Chi-square test to ensure that the training and validation test sets are from the same distribution. We ended up with a p-value of 0.2382, which is greater than 0.05 significance level. Therefore,we do not reject the null hypothesis and conclude that the training and validation test sets have a significant relationship. We calculated the validation error for each month by subtracting observed demand from predicted demand, which gives us an average error of 7 units of difference between the predicted demand and the actual demand. Since the holding cost of those additional units is $1/unit, it does not seem to be costing the company a lot of money for the additional units predicted.
+
+We recommend reiterating and predicting demand for at least 1 year using historical data in order to come to a more definite conclusion regarding the accuracy of the models.
+
 
 
 
