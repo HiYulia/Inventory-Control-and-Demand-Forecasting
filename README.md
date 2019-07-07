@@ -26,5 +26,5 @@ The two decomposition functions yielded similar results. We decided to continue 
 We generated six sets of prediction data to begin the “rolling horizon approach” (Suvrajeet). This requires generating a 3 months of demand predictions in the future with each additional month of data. Since we want to predict 6 months into the future beginning in January 2001 and ending in June 2001, we first predicted using the training data set, then we predicted with the training data set plus one additional month of data, and so on and so forth until we get to the sixth month. This gives us 6 sets of data that includes 3 months of predicted demand and forecast errors
 
 ## Optimization Model
-
+![Image of Yaktocat](Inventory-Control-and-Demand-Forecasting1.png)
 
