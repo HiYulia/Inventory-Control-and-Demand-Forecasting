@@ -44,6 +44,9 @@ To validate our results, we used the Back-Testing approach. We first performed a
 
 We recommend reiterating and predicting demand for at least 1 year using historical data in order to come to a more definite conclusion regarding the accuracy of the models.
 
+### Backtesting
+Historical Simulation approximates the conditional distribution of returns using a rolling window with typically one or two years of past returns. It is nonparametric and easy to implement, hence favored by practitioners, but it relies on assumptions; it assumes that returns are independent and identically distributed. It ignores stylized facts such as volatility clustering and leverage effects, and the time-varying dynamics of returns is only accounted for by the rolling window. Moreover, Historical Simulation is under-responsive to changes in conditional risk (see Pritsker, 2006 ).
+
 
 
 
